@@ -148,5 +148,6 @@ namespace EnfcGlog.Controllers
         {
             return _context.Equipe.Any(e => e.Id == id);
         }
+        
     }
 }

@@ -24,7 +24,7 @@ namespace EnfcGlog
 
                 try
                 {
-                    SeedData.Initialize(services);
+                    Data.SeedData.Initialize(services);
                 }
                 catch (Exception ex)
                 {

@@ -8,8 +8,11 @@ namespace EnfcGlog.Models
     {
         [Display(Name ="Nom"),Required]
         public int Id{get;set;}
-        public Equipe[] classement {get;set;} //(Tableau triée par score décroissant)
-        public Match[] lesMatchs {get;set;}
+        public ICollection<Equipe> classement{get;set;}
+        
+        //(Tableau triée par score décroissant)
+        public ICollection<Match> lesMatchs{get;set;}
+        
         
     }
 }
