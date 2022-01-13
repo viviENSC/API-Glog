@@ -2,14 +2,16 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EnfcGlog.Migrations
 {
     [DbContext(typeof(EnfcGlogContext))]
-    partial class EnfcGlogContextModelSnapshot : ModelSnapshot
+    [Migration("20220113131220_migration2")]
+    partial class migration2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -63,6 +65,8 @@ namespace EnfcGlog.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("EquipeId");
 
                     b.ToTable("Joueur");
                 });
@@ -129,6 +133,15 @@ namespace EnfcGlog.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("EnfcGlog.Models.Joueur", b =>
+                {
+                    b.HasOne("EnfcGlog.Models.Equipe", null)
+                        .WithMany("lesJoueurs")
+                        .HasForeignKey("EquipeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("EnfcGlog.Models.Match", b =>
                 {
                     b.HasOne("EnfcGlog.Models.Poule", null)
@@ -136,6 +149,11 @@ namespace EnfcGlog.Migrations
                         .HasForeignKey("PouleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("EnfcGlog.Models.Equipe", b =>
+                {
+                    b.Navigation("lesJoueurs");
                 });
 
             modelBuilder.Entity("EnfcGlog.Models.Poule", b =>

@@ -14,9 +14,6 @@ namespace EnfcGlog.Models
         [Display(Name ="Nom"),Required]
         public string nom {get;set;}
 
-        [Display(Name ="Les joueurs")]
-        public Joueur[] lesJoueurs {get;set;}
-
         [Display(Name ="Ecole"),Required]
         public string ecole {get;set;}
 

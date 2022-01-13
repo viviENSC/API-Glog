@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using EnfcGlog.Models;
 
-namespace Glog.Data
+namespace EnfcGlog.Data
 {
     public static class SeedData
     {
@@ -42,7 +42,7 @@ namespace Glog.Data
 
                 var equipes = new Equipe[]
                 {
-                    new Equipe{Id=1,PouleId=1,nom="ENFC",lesJoueurs=joueur,ecole="ENSC",nbPoints=0},
+                    new Equipe{Id=1,PouleId=1,nom="ENFC",ecole="ENSC",nbPoints=0},
                     new Equipe{Id=2,PouleId=1,nom="Sciences Tech 4",ecole="Sciences et Technologies",nbPoints=0},
                     new Equipe{Id=3,PouleId=1,nom="Torpedo 1917",ecole="Science Politique",nbPoints=0},
                     new Equipe{Id=4,PouleId=1,nom="Les Pieuvres",ecole="DUT Commerce",nbPoints=0},
@@ -71,6 +71,7 @@ namespace Glog.Data
                     new Match{Id=14,PouleId=1,equipe1="Les Pieuvres",equipe2="Sciences Tech 4",scoreEquipe1=0,scoreEquipe2=0,coteVictoireE1=0.5,coteVictoireE2=1.4,coteMNul=0.8,dateDuMatch=DateTime.Parse("2021-12-09")},
                     new Match{Id=4,PouleId=1,equipe1="Torpedo",equipe2="Montaigne 3",scoreEquipe1=2,scoreEquipe2=5,coteVictoireE1=0.5,coteVictoireE2=1.4,coteMNul=0.8,dateDuMatch=DateTime.Parse("2021-12-09")},
                 };
+                context.Match.AddRange(matchs);
 
                 var poules = new Poule[]
                 {
