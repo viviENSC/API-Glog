@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
 
 namespace EnfcGlog
 {
@@ -24,6 +25,9 @@ namespace EnfcGlog
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<EnfcGlogContext>(options =>
+                    options.UseSqlite(Configuration.GetConnectionString("EnfcGlogContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

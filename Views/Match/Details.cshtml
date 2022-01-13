@@ -1,0 +1,72 @@
+@model EnfcGlog.Models.Match
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Match</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PouleId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PouleId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.equipe1)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.equipe1)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.equipe2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.equipe2)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.scoreEquipe1)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.scoreEquipe1)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.scoreEquipe2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.scoreEquipe2)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.coteVictoireE1)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.coteVictoireE1)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.coteVictoireE2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.coteVictoireE2)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.coteMNul)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.coteMNul)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dateDuMatch)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dateDuMatch)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
