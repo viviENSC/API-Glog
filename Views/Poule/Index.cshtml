@@ -12,12 +12,30 @@
 <table class="table">
     <thead>
         <tr>
-            <th></th>
+            <th>
+                @Html.DisplayNameFor(item=>item.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(item=>item.classement)
+            </th>
+            <th>
+                @Html.DisplayNameFor(item=>item.lesMatchs)
+                
+            </th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(itemModel=>item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(itemModel=>item.classement)
+            </td>
+            <td>
+                @Html.DisplayFor(itemModel=>item.lesMatchs) 
+            </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |

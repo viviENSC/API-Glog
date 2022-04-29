@@ -31,8 +31,9 @@ namespace EnfcGlog.Controllers
             {
                 return NotFound();
             }
-
             var poule = await _context.Poule
+                .Include(p=>p.lesMatchs)
+                .Include(c=>c.classement)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (poule == null)
             {

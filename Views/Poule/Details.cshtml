@@ -10,6 +10,69 @@
     <h4>Poule</h4>
     <hr />
     <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dd class="col-sm-10">
+            <table class="table">
+                <tr>
+                    <th>Equipe 1</th>
+                    <th>Equipe 2</th>
+                    <th>Côte Victoire de l'équipe 1</th>
+                    <th>Côte Victoire de l'équipe 2</th>
+                    <th>Côte match nul</th>
+                    <th>Date du match</th>
+                    @* <th>Numéro de la poule</th>
+                    <th>Equipe</th>
+                    <th>Ecole</th>
+                    <th>Nombre de points</th> *@
+                </tr>
+                @foreach (var item in Model.lesMatchs)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.equipe1)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.equipe2)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.coteVictoireE1)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.coteVictoireE2)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.coteMNul)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.dateDuMatch)
+                        </td>
+                    </tr>
+                }
+                  @foreach (var item in Model.classement)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PouleId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nom)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ecole)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nbPoints)
+                        </td> 
+                    </tr>
+                } 
+            </table>
+        </dd>
+    
     </dl>
 </div>
 <div>
